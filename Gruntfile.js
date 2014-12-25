@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       },
       test: {
         options: {
-          reporter: 'XUnit'
+          reporter: 'xunit'
         }
       }
     },
