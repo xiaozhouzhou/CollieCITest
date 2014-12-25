@@ -1,0 +1,25 @@
+{
+  "name": "CollitCITest",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "~1.20.1",
+    "should": "~4.0.4",
+    "istanbul": "0.2.10",
+    "mocha-jenkins-reporter": "0.1.3",
+    "supertest": "~0.13.0",
+    "grunt": "*",
+    "grunt-env": "0.4.2",
+    "grunt-mocha-istanbul": "*"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter dot --recursive test/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --recursive test/",
+    "test-jenkins": "istanbul cover node_modules/mocha/bin/_mocha --reporter mocha-jenkins-reporter --recursive test/",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --recursive test/"
+  }
+}
