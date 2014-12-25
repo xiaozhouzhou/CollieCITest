@@ -1,5 +1,17 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    mochacli: {
+      options: {
+        require: ['should'],
+        files: 'test/*.js',
+        save: 'coverage/test-results.xml'
+      },
+      test: {
+        options: {
+          reporter: 'XUnit'
+        }
+      }
+    },
     mocha_istanbul: {
       test: {
         src: 'test',
@@ -10,6 +22,9 @@ module.exports = function(grunt) {
       }
     }
   });
+
+  grunt.loadNpmTasks('grunt-mocha-cli');
   grunt.loadNpmTasks('grunt-mocha-istanbul');
-  grunt.registerTask('test', 'run test and generate coverage information', ['mocha_istanbul:test']);
+
+  grunt.registerTask('test', 'run test and generate coverage information', ['mochacli:test','mocha_istanbul:test']);
 };
