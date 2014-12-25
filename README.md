@@ -1,4 +1,4 @@
 CollieCITest
 ============
 
-CollieCITest ci
+CollieCITest
