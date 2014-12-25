@@ -13,5 +13,10 @@ describe("util.js", function() {
       should.equal(3,result);
     });
 
+    it("minus", function() {
+      var result = util.minus(2,1);
+      should.equal(1,result);
+    });
+
   });
 });
